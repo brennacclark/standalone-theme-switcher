@@ -1,0 +1,12 @@
+<header class="header-content {{theme}}">
+  <h2>{{ title }}</h2>
+
+  <h5>Header Theme: {{ theme }}</h5>
+
+  <section class="theme-options">
+    <div id="theme-light" (click)="setTheme('theme-light')"></div>
+    <div id="theme-dark" (click)="setTheme('theme-dark')"></div>
+    <div id="theme-red" (click)="setTheme('theme-red')"></div>
+    <div id="theme-blue" (click)="setTheme('theme-blue')"></div>
+  </section>
+</header>

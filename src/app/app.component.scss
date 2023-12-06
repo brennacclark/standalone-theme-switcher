@@ -1,0 +1,18 @@
+.app.theme-light {
+  background-color: var(--color-light-background);
+  color: var(--color-light-text-primary);
+}
+
+.app.theme-dark {
+  background-color: var(--color-dark-background);
+  color: var(--color-light-dark-primary);
+}
+
+.app.theme-red {
+  background-color: var(--color-red-background);
+  color: var(--color-light-red-primary);
+}
+
+.app.theme-blue {
+  background-color: var(--color-blue-background);
+}

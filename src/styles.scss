@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --color-light: #fff;
+  --color-light-text-primary: #666;
+  --color-light-text-secondary: #888;
+  --color-light-background: #eee;
+  --color-light-background-header: #ddd;
+
+  --color-dark: #000;
+  --color-dark-text-primary: #000;
+  --color-dark-text-secondary: #fff;
+  --color-dark-background: #333;
+  --color-dark-background-header: #555;
+
+  --color-red: red;
+  --color-red-text-primary: #781414;
+  --color-red-text-secondary: #000;
+  --color-red-background: #c28b8b;
+  --color-red-background-header: #b94d4d;
+
+  --color-blue: blue;
+  --color-blue-text-primary: #0832bc;
+  --color-blue-text-secondary: #fff;
+  --color-blue-background: #677fcb;
+  --color-blue-background-header: #3254c3;
+}
+
+main {
+  height: 100vh;
+}
