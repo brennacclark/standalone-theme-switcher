@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { ThemeService } from '../theme.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { ThemeService } from '../theme.service';
   styleUrl: './footer.component.scss',
 })
 export class FooterComponent {
-  @Input() theme: string = 'light-theme';
+  theme: string = 'light-theme';
 
   constructor(private themeService: ThemeService) {}
 
