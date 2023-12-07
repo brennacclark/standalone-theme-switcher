@@ -16,8 +16,6 @@ export class AppComponent implements OnInit {
   theme: string = 'theme-light';
   title = 'Standalone Theme Switcher';
 
-  onThemeChanged: any;
-
   constructor(private themeService: ThemeService) {}
 
   ngOnInit(): void {
