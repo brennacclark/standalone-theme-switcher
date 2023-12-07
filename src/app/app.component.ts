@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
@@ -13,7 +13,7 @@ import { ThemeService } from './theme.service';
   styleUrl: './app.component.scss',
 })
 export class AppComponent implements OnInit {
-  @Input() theme = 'theme-light';
+  theme: string = 'theme-light';
   title = 'Standalone Theme Switcher';
 
   onThemeChanged: any;
