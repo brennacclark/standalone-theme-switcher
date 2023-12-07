@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { ThemeService } from './theme.service';
 
 @Component({
   selector: 'app-root',
@@ -12,20 +13,17 @@ import { FooterComponent } from './footer/footer.component';
   styleUrl: './app.component.scss',
 })
 export class AppComponent implements OnInit {
+  @Input() theme = 'theme-light';
   title = 'Standalone Theme Switcher';
 
-  theme = 'theme-light';
+  onThemeChanged: any;
 
-  constructor() {}
+  constructor(private themeService: ThemeService) {}
 
   ngOnInit(): void {
-    this.theme = localStorage.getItem('theme-color') || 'theme-light';
-  }
-
-  onThemeChanged(newTheme: string) {
-    // Update the theme in local storage
-
-    this.theme = newTheme;
-    localStorage.setItem('theme-color', this.theme);
+    this.themeService.loadInitialTheme();
+    this.themeService.getTheme().subscribe((currentTheme) => {
+      this.theme = currentTheme;
+    });
   }
 }

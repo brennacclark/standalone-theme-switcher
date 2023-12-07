@@ -1,12 +1,11 @@
-<main class="app {{ theme }}">
+<main class="app {{theme}}" >
   <h5>App Theme: {{ theme }}</h5>
 
-  <app-header
-    [theme]="theme"
-    (themeChanged)="onThemeChanged($event)"
-  ></app-header>
+  <app-header></app-header>
 
-  <section class="main-content"></section>
+  <section class="main-content">
+    <!-- Your main content here -->
+  </section>
 
-  <app-footer [theme]="theme"></app-footer>
+  <app-footer ></app-footer>
 </main>

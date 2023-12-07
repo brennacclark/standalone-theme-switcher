@@ -1,4 +1,5 @@
-import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ThemeService } from '../theme.service';
 
 @Component({
   selector: 'app-header',
@@ -8,17 +9,18 @@ import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent implements OnInit {
-  @Input() theme = 'theme-light';
-  @Output() themeChanged: EventEmitter<string> = new EventEmitter<string>(); // Create an EventEmitter
-
   title = 'Standalone Theme Switcher';
+  theme: string = 'light-theme';
 
-  constructor() { }
+  constructor(private themeService: ThemeService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.themeService.getTheme().subscribe((currentTheme) => {
+      this.theme = currentTheme;
+    });
+  }
 
   setTheme(newTheme: string) {
-    this.theme = newTheme;
-    this.themeChanged.emit(this.theme);
+    this.themeService.setTheme(newTheme);
   }
 }
